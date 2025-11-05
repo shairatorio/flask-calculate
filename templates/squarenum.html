@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square of Number</title>
+</head>
+<body>
+    <h1><i>Welcome to the Maths page</i></h1>
+    <p>Logic shapes every choice of our daily lives.<br>
+    Logical thinking enables someone to learn and
+    make decisions that affect their way of life!</p>
+
+    <!-- Error message -->
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <!-- Form -->
+    <form action="/square" method="get">
+        Enter a number:
+        <input type="text" name="num" id="num" value="{{ num or '' }}">
+        <input type="submit" name="btnNum" id="btnNum" value="Submit">
+    </form>
+
+    <!-- Show result if available -->
+    {% if square is not none %}
+        <h2>Number: {{ num }}</h2>
+        <h2>Square: {{ square }}</h2>
+    {% endif %}
+</body>
+</html>
